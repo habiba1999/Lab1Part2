@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> Email Form</title>
+        <style>
+            .dive
+            {
+                border: 2px solid black;
+                width: 650px;
+                height: 500px;
+            }
+            input[type="text"]:invalid,input[type="email"]:invalid {
+               border: 2px solid rgb(227, 83, 16);
+               border-radius: 25px; 
+             }
+             input[type="text"]:valid,input[type="email"]:valid {
+               border: 2px solid rgb(65, 227, 16);
+               border-radius: 25px;
+               
+            }
+            input[type="text"]:focus,input[type="email"]:focus {
+               outline: none;
+            }
+            input[type="text"]:valid + #T_username ,input[type="email"]:valid + #T_email
+            {
+                display: none;
+            }
+            .submitbtn
+            {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="dive">
+            <h1>change Email Address</h1>
+        <form>
+            <input type="text" id="username" name="username" placeholder="Username" pattern="[A-Za-z]{1,10}" autocomplete="off" required>
+            <p id="T_username">The requierd user name may be only a series of Alphabetical char from 1char to 10 </p>
+            <br>
+            <input type="email" id="email" name="email" placeholder="Email" pattern="[A-Za-z0-9]+@[a-zA-z]+.[a-z]{5-15}"  autocomplete="off" required>
+            <p id="T_email">The requierd email address may not include any spacial char other than '@'</p>
+            <br>
+            <button class="submitbtn">Change</button>
+        </form>
+        </div>
+        
+    </body>
+
+</html>
